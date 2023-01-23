@@ -52,5 +52,13 @@ namespace MMDictionary
                 }
             }
         }
+
+        private void CloseApp_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult messageBoxResult = MessageBox.Show("Are you sure?", "Exit Application", MessageBoxButton.YesNo);
+            if (messageBoxResult == MessageBoxResult.Yes)
+                Close();
+ 
+        }
     }
 }

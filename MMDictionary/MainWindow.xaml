@@ -8,8 +8,8 @@
         xmlns:Menu="clr-namespace:MMDictionary.Ultilities"
         xmlns:fa5="http://schemas.fontawesome.com/icons/"
         mc:Ignorable="d"
-        Title="MainWindow"   Height="600"
-        Width="850"
+        Title="MainWindow"   Height="720"
+        Width="1080"
         AllowsTransparency="True"
         Background="Transparent"
         WindowStartupLocation="CenterScreen"
@@ -56,10 +56,11 @@
 
                         <Grid>
 
-                            <fa5:ImageAwesome Icon="Solid_Book" Foreground="blue" Style="{StaticResource Image_Style}" Width="20"/>
 
-                            <!--<TextBlock Text="Home"
-                                       Style="{StaticResource Text_Style}" />-->
+                            <fa5:ImageAwesome Icon="Solid_Book" Foreground="MediumPurple" Style="{StaticResource Image_Style}" Width="20"/>
+
+                            <TextBlock Text="Home"
+                                       Style="{StaticResource Text_Style}" />
 
                         </Grid>
 
@@ -71,7 +72,7 @@
                               Command="{Binding AboutCommand}">
 
                         <Grid>
-                            <fa5:ImageAwesome Icon="Solid_InfoCircle" Foreground="blue" Style="{StaticResource Image_Style}" Width="20"/>
+                            <fa5:ImageAwesome Icon="Solid_InfoCircle" Foreground="MediumPurple" Style="{StaticResource Image_Style}" Width="20"/>
                             <!--<TextBlock Text="About"
                                        Style="{StaticResource Text_Style}" />-->
 
@@ -84,14 +85,20 @@
             </Grid>
 
             <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="26*"/>
+                    <RowDefinition Height="19*"/>
+                </Grid.RowDefinitions>
 
                 <ContentControl x:Name="Pages"
-                                Content="{Binding CurrentView}" />
+                                Content="{Binding CurrentView}" Grid.RowSpan="2" />
 
             </Grid>
 
         </Grid>
+ <Button x:Name="CloseApp"
+                Style="{StaticResource ExitApp}"
+                Click="CloseApp_Click" />
 
-      
     </Grid>
 </Window>
